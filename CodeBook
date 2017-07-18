@@ -1,0 +1,34 @@
+Description
+
+This codebook describes how the data, vars and transformations fit together within the code.
+
+Source Data
+
+A description of the data used in this project can be found at The UCI Machine Learning Repository.
+Data can be downloaded here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+1.Merge the training and the test sets to create one data set.
+
+The following files have been read to perform analysis:
+•features.txt
+•activity_labels.txt
+•subject_train.txt
+•x_train.txt
+•y_train.txt
+•subject_test.txt
+•x_test.txt
+•y_test.txt
+
+All of the test and train datasets are merged together using rbind function in R.
+
+2.Extract only the measurements on the mean and standard deviation for each measurement.
+Using grep I have derived all mean values and std values within the merged dataset.
+
+3.Use descriptive activity names to name the activities in the data set
+Merge data subset with the activityType table to inlude the descriptive activity names.
+
+4.Appropriately labels the data set with descriptive variable names
+Clean up var names with the gsub function.
+
+5.Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+A single table has been created at the end which makes use of the aggregate function to create the averages required.
